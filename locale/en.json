@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "MCP Hub",
+    "description": "Manage MCP servers from the settings page: stdio, Streamable HTTP and SSE transports, including SSE-only servers such as Burp and Yakit. Add, edit, enable, test and call tools directly."
+  }
+}

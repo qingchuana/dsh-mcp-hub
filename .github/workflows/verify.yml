@@ -1,0 +1,22 @@
+# Verify every push: the suites are dependency-free and run offline, so this
+# needs nothing but Node. `npm run check` validates against the shipped DSH
+# gateway when one is installed and skips cleanly when it is not (CI has none).
+name: verify
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Tests
+        run: npm test
+      - name: Contract checks
+        run: npm run check

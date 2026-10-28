@@ -1,0 +1,69 @@
+{
+  "name": "mcp-tool",
+  "version": "1.0.0",
+  "description": "MCP server manager for DeepSeek Harness: manage stdio / streamable-http / SSE servers — including Burp Suite and Yakit — from the settings page.",
+  "type": "module",
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "author": "qingchuana",
+  "icon": "./icon.svg",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "cordis",
+    "plugin",
+    "mcp",
+    "model-context-protocol",
+    "sse",
+    "burp",
+    "yakit"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qingchuana/dsh-mcp-hub.git"
+  },
+  "homepage": "https://github.com/qingchuana/dsh-mcp-hub#readme",
+  "bugs": {
+    "url": "https://github.com/qingchuana/dsh-mcp-hub/issues"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "icon.svg",
+    "locale",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node tools/test-mcp-hub.mjs",
+    "check": "node tools/check-reserved-names.mjs && node tools/check-remote-payloads.mjs",
+    "verify": "npm test && npm run check"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-api-remotes"
+      ]
+    }
+  }
+}

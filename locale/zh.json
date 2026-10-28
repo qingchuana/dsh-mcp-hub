@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "MCP 管理",
+    "description": "在设置页集中管理 MCP 服务器：stdio / Streamable HTTP / SSE 三种传输，支持 Burp、Yakit 等只提供 SSE 的服务端，可增删改、启停、测试连通性并直接调用工具。"
+  }
+}

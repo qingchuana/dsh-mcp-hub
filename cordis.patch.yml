@@ -1,0 +1,8 @@
+# The dsh-mcp-hub bundle patch: mounts the plugin's host half as one Cordis
+# loader row. The same row is the browser roster row (the plugin declares
+# `dsh.client`), so the client half is discovered from it automatically.
+# Apply this bundle after `dsh-base` + `dsh-web-app`, which provide the Loader
+# and the settings shell the plugin's `inject` resolves against.
+- insert:
+    - id: mcp-tool
+      name: mcp-tool

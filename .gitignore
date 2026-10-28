@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Local DSH profile artifacts
+.plugin-manager/
+*.log
+
+# Packed tarballs
+*.tgz
+
+# Editor / OS noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
